@@ -2,32 +2,20 @@ const express = require(`express`);
 const cookieParser = require("cookie-parser");
 const app = express();
 const cors = require("cors");
+
+const corsOptions = {
+  origin: "http://localhost:3001",
+  credentials: true,
+  optionSuccessStatus: 200,
+  "access-control-allow-credential": true,
+};
 app.use(cors());
-app.use((req, res, next) =>{
-res.setHeader('Access-Control-Allow-Origin', '*');
-res.setHeader('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type,Accept, Authortization');  
-res.setHeader('Acces-Control-Allow-Methods','GET, POST, PATCH, DELETE');
+
 app.use(cookieParser());
 
 require("dotenv").config();
 app.use(express.json());
-// const corsOptions = {
-//   origin: "*",
-//   credentials: true,
-//   optionSuccessStatus: 200,
-//   "access-control-allow-credentials": true,
-// };
 
-// app.use(function (request, response, next) {
-//   response.header("Access-Control-Allow-Origin", "*");
-//   response.header(
-// "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   next();
-// });
-
-// console.log(cookieParser);
 const PORT = process.env.PORT || 5001;
 const users = require("./routes/users");
 const auth = require("./routes/auth");
