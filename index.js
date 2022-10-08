@@ -6,14 +6,14 @@ app.use(cookieParser());
 
 require("dotenv").config();
 app.use(express.json());
-// const corsOptions = {
-//   origin: "https://frontend-nodesqlapi.vercel.app/",
-//   credentials: true,
-//   optionSuccessStatus: 200,
-//   "access-control-allow-credentials": true,
-// };
+const corsOptions = {
+  origin: "https://frontend-nodesqlapi.vercel.app/",
+  credentials: true,
+  optionSuccessStatus: 200,
+  "access-control-allow-credentials": true,
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 console.log(cookieParser);
 const PORT = process.env.PORT || 5001;
 const users = require("./routes/users");
