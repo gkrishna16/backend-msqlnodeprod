@@ -19,6 +19,7 @@ const PORT = process.env.PORT || 5001;
 const users = require("./routes/users");
 const auth = require("./routes/auth");
 const posts = require("./routes/posts");
+// const { Model } = require("sequelize");
 
 app.use("/api/users/", users);
 app.use("/api/auth", auth);
