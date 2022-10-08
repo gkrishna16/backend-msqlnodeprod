@@ -10,7 +10,7 @@ const corsOptions = {
   origin: "https://frontend-nodesqlapi.vercel.app/",
   credentials: true,
   optionSuccessStatus: 200,
-  // "access-control-allow-credentials": true,
+  "access-control-allow-credentials": true,
 };
 
 app.use(cors(corsOptions));
