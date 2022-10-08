@@ -29,7 +29,6 @@ function register(req, res) {
 // Login the user.
 const login = (req, res) => {
   //CHECK USER
-
   const q = "SELECT * FROM users WHERE username = ?";
 
   db.query(q, [req.body.username], (err, data) => {
@@ -51,7 +50,7 @@ const login = (req, res) => {
 
     res
       .cookie("access_token", token, {
-        httpOnly: false,
+        httpOnly: true,
       })
       .status(200)
       .json(other);
