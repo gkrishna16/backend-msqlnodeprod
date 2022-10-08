@@ -9,7 +9,7 @@ const corsOptions = {
   optionSuccessStatus: 200,
   "access-control-allow-credential": true,
 };
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 
