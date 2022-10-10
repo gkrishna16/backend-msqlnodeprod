@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 
 const corsOptions = {
-  origin: "*",
+  origin: "https://frontend-nodesqlapi.vercel.app/",
   credentials: true,
   optionSuccessStatus: 200,
   "access-control-allow-credential": true,

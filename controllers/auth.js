@@ -59,6 +59,7 @@ const login = (req, res) => {
 };
 // Logout route
 function logout(req, res) {
+  console.log(req.cookies);
   res
     .clearCookie(`access_token`, { sameSite: `none`, secure: true })
     .json(`User has been logged out.`);
