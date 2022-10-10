@@ -50,6 +50,7 @@ const login = (req, res) => {
 
     res
       .cookie("access_token", token, {
+        // signed: true,
         httpOnly: true,
       })
       .status(200)
