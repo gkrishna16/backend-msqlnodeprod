@@ -31,6 +31,6 @@ app.use("/api/users/", users);
 app.use("/api/auth", auth);
 app.use("/api/posts", posts);
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
