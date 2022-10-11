@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const corsOptions = {
   "Access-Control-Request-Headers": "Content-Type, Accept",
-  origin: ["http://localhost:3000"],
+  origin: ["https://frontend-nodesqlapi-67zz57q6i-gkrishna16.vercel.app/"],
   methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
