@@ -14,14 +14,14 @@ async function getPosts(req, res) {
 
 async function addPost(req, res) {
   try {
-    // const token = req.cookies.access_token;
-    // console.log(token);
-    // if (!token) return res.status(500).json(`Not authenticated.`);
+    const token = req.cookies.access_token;
+    console.log(token);
+    if (!token) return res.status(500).json(`Not authenticated.`);
 
-    // jwt.verify(token, "jwtkey", (err, userInfo) => {
-    //   if (err) return res.status(403).json(`token is not valid.`);
+    jwt.verify(token, "jwtkey", (err, userInfo) => {
+      if (err) return res.status(403).json(`token is not valid.`);
 
-      // const postId = req.params.id;
+      const postId = req.params.id;
       const q =
         "insert into posts(`title`, `desc`, `img`, `category`, `date`, `uid`) values (?)";
       const values = [
